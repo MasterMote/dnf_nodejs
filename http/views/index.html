@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNF角色列表</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.css"> -->
+</head>
+
+<body>
+    <div style="padding:40px;">
+        <h2>DNF角色列表</h2>
+        <button type="submit" class="btn btn-primary">添加角色</button>
+        <table class="table">
+            <thead>
+                <td>序号</td>
+                <td>职业</td>
+                <td>等级</td>
+                <td>技能</td>
+                <td>操作</td>
+            </thead>
+            <tbody>
+                {{each data}}
+                <tr>
+                    <td>{{$value.hero_id}}</td>
+                    <td>{{$value.hero_class}}</td>
+                    <td>{{$value.hero_level}}</td>
+                    <td>{{$value.hero_skills}}</td>
+                    <td>
+                        <a href="/getone?hero_id={{$value.hero_id}}">查看</a>
+                        <a href="/updateone?hero_id={{$value.hero_id}}">修改</a>
+                        <a href="#">删除</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

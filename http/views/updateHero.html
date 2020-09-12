@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--设置页面的宽度随着使用者的设备变化二变化 -->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <form class="form-horizontal" method="post" action="updateone">
+                    <!-- 表单区域-->
+                    <fieldset style="position: relative; overflow: hidden;">
+                        <!--表单主题-->
+                        <legend style="text-align: center;">添加职业</legend>
+                        <!-- 每一个form-group都可以自定义布局-->
+                        <div class="form-group" style="margin: 50px auto">
+                            <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                            <label class="col-md-2 control-label">职业</label>
+                            <div class="col-md-8">
+                                <input class="form-control" name="hero_class" type="text" value="{{data[0].hero_class}}" />
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin: 50px auto">
+                            <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                            <label class="col-md-2 control-label">等级</label>
+                            <div class="col-md-8">
+                                <input class="form-control" name="hero_level" type="text" value="{{data[0].hero_level}}" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin: 50px auto">
+                            <!-- label表示文字提示标签,可以通过表单的组建的id提示-->
+                            <label class="col-md-2 control-label" for="con">技能</label>
+                            <div class="col-md-8">
+                                <input class="form-control" name="hero_skills" type="text" value="{{data[0].hero_skills}}" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin: 50px auto">
+                            <div class="col-md-6 col-md-offset-5">
+                                <input class="btn btn-primary" type="submit" value="提交" />
+                                <input class="btn btn-warning" type="reset" value="重置" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div>
+</body>
+
+</html>
