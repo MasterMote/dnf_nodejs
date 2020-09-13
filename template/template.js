@@ -10,8 +10,7 @@ module.exports = {
         })
     },
     getOne: function(req, res) {
-        let urls = req.url
-        let id = url.parse(urls, true).query
+        let id = url.parse(req.url, true).query
         dbData.getOne(id.hero_id).then(datas => res.send(datas))
     },
     updateOne: function(req, res) {
@@ -28,4 +27,20 @@ module.exports = {
             }
         })
     },
+    addOneGet: function(req, res) {
+        res.render('addOnePage.html')
+    },
+    addOnePost: function(req, res) {
+        dbData.addOnePost(req.body).then(result => {
+            let str = "<script>alert('添加成功');window.location.href = '/'</script>"
+            res.send(str)
+        })
+    },
+    deleteOne: function(req, res) {
+        let id = url.parse(req.url, true).query
+        dbData.deleteOne(id.hero_id).then(result => {
+            let str = "<script>alert('删除成功');window.location.href = '/'</script>"
+            res.send(str)
+        })
+    }
 }

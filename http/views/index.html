@@ -12,7 +12,7 @@
 <body>
     <div style="padding:40px;">
         <h2>DNF角色列表</h2>
-        <button type="submit" class="btn btn-primary">添加角色</button>
+        <a type="submit" class="btn btn-primary" href="/addone">添加角色</a>
         <table class="table">
             <thead>
                 <td>序号</td>
@@ -31,7 +31,7 @@
                     <td>
                         <a href="/getone?hero_id={{$value.hero_id}}">查看</a>
                         <a href="/updateone?hero_id={{$value.hero_id}}">修改</a>
-                        <a href="#">删除</a>
+                        <a href="/delete?hero_id={{$value.hero_id}}">删除</a>
                     </td>
                 </tr>
                 {{/each}}

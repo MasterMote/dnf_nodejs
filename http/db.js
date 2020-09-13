@@ -56,7 +56,30 @@ module.exports = {
         return new Promise((resolve, reject) => {
             let sql = "UPDATE dnf_hero_list SET hero_class = '" + obj.hero_class + "',hero_level = '" + obj.hero_level + "',hero_skills = '" + obj.hero_skills + "' where hero_id = " + wh_id
             connection.query(sql, function(err, data) {
-                console.log(sql)
+                if (!err) {
+                    resolve(data.changedRows)
+                } else {
+                    reject(err)
+                }
+            })
+        })
+    },
+    addOnePost: function(obj) {
+        return new Promise((resolve, reject) => {
+            let sql = "INSERT INTO dnf_hero_list (hero_class, hero_level, hero_skills) VALUES ( '" + obj.hero_class + "','" + obj.hero_level + "','" + obj.hero_skills + "')"
+            connection.query(sql, function(err, data) {
+                if (!err) {
+                    resolve(data.changedRows)
+                } else {
+                    reject(err)
+                }
+            })
+        })
+    },
+    deleteOne: function(id) {
+        return new Promise((resolve, reject) => {
+            let sql = "DELETE FROM dnf_hero_list WHERE hero_id = " + id
+            connection.query(sql, function(err, data) {
                 if (!err) {
                     resolve(data.changedRows)
                 } else {
